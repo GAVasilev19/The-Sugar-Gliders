@@ -7,4 +7,7 @@ int main()
 {
 	// Change console color
 	system("color 5F");
+
+	// Print out menu
+	menu();
 }
