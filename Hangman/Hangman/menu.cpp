@@ -111,6 +111,11 @@ void rules()
     cout << "                 |   | \\   \\    |  |  |  |  |  |  |   _____|  \\  \\" << endl;
     cout << "                 |   |  \\   \\   |   \\/   |  |  |  |  |____   __\\  \\" << endl;
     cout << "                 |___|   \\___\\   \\______/   |__|   \\______/  \\_____/" << endl;
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl << endl;
+
+    cout << "Would you like to go back to the menu? - Y/N" << endl;
+    cout << "Your choice: ";
+    returnToMenu();
 }
 
 void teamInfo()
@@ -123,4 +128,38 @@ void teamInfo()
     cout << "                        |   |  |   _____|  |  /  \\  |  |     \\  \\  |" << endl;
     cout << "                        |   |  |  |____    |  \\__/  |  |     |  |  |" << endl;
     cout << "                        |___|   \\______/    \\ ____,_|  |__/__|__|__|" << endl;
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl << endl;
+
+    cout << "Would you like to go back to the menu? - Y/N" << endl;
+    cout << "Your choice: ";
+    returnToMenu();
+}
+
+void returnToMenu()
+{
+    char answer;
+    bool flag = false;
+
+    while (flag == false)
+    {
+        cin >> answer;
+
+        if (answer == 'Y' || answer == 'y') // Go back to the menu
+        {
+            system("CLS");  // Clear the console
+            menu();         // Print out game menu
+        }
+
+        else if (answer == 'N' || answer == 'n')    // Exit the programme
+        {
+            exit(0);
+        }
+
+        else   // Invalid user input
+        {
+            cin.ignore(1000, '\n');
+            cout << endl << "You entered an invalid statement. Please try again." << endl;
+            cout << "Your choice: ";
+        }
+    }
 }

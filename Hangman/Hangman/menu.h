@@ -13,3 +13,5 @@ void choice(int number);
 void rules();
 
 void teamInfo();
+
+void returnToMenu();
