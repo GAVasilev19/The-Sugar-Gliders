@@ -34,4 +34,67 @@ void menu()
     cout << setw(60) << "|    4 )    EXIT           |" << endl;
     cout << setw(60) << "+--------------------------+" << endl;
 
+    cout << setw(58) << "Please enter your choice: ";
+    choice(inputNumber());
+}
+
+int inputNumber()
+{
+    int number;
+    bool checkNum = false;
+
+    while (checkNum == false)
+    {
+        if (cin >> number)
+        {
+            if (number > 4 || number < 1) // Invalid input
+            {
+                cout << endl << "You entered an invalid statement. Please try again." << endl;
+                cout << "Your choice: ";
+                checkNum = false;
+            }
+
+            else    // Valid input
+            {
+                checkNum = true;
+            }
+        }
+
+        else    // The user entered a character
+        {
+            cout << endl << "You entered an invalid statement. Please try again." << endl;
+            cout << "Your choice: ";
+            cin.clear();
+            cin.ignore(1000, '\n');
+            checkNum = false;
+        }
+    }
+
+    return number;
+}
+
+void choice(int number)
+{
+    system("CLS");  // Clear console
+
+    switch (number)
+    {
+        case 1:
+        {
+            break;
+        }
+        case 2:
+        {
+            break;
+        }
+        case 3:
+        {
+            break;
+        }
+        case 4:
+        {
+            exit(0);
+            break;
+        }
+    }
 }

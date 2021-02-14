@@ -5,3 +5,7 @@ using namespace std;
 void title();
 
 void menu();
+
+int inputNumber();
+
+void choice(int number);
