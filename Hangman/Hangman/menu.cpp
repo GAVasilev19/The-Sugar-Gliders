@@ -85,6 +85,7 @@ void choice(int number)
         }
         case 2:
         {
+            rules();
             break;
         }
         case 3:
@@ -97,4 +98,16 @@ void choice(int number)
             break;
         }
     }
+}
+
+void rules()
+{
+    cout << "                  _________                  __" << endl;
+    cout << "                 |    __   \\                |  |" << endl;
+    cout << "                 |   |   \\  |               |  |" << endl;
+    cout << "                 |   |___| /     __    __   |  |    ______     _____" << endl;
+    cout << "                 |        \\     |  |  |  |  |  |   /  __  \\   /  ___/" << endl;
+    cout << "                 |   | \\   \\    |  |  |  |  |  |  |   _____|  \\  \\" << endl;
+    cout << "                 |   |  \\   \\   |   \\/   |  |  |  |  |____   __\\  \\" << endl;
+    cout << "                 |___|   \\___\\   \\______/   |__|   \\______/  \\_____/" << endl;
 }

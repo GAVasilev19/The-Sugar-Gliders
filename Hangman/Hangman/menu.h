@@ -9,3 +9,5 @@ void menu();
 int inputNumber();
 
 void choice(int number);
+
+void rules();
