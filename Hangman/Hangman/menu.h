@@ -11,3 +11,5 @@ int inputNumber();
 void choice(int number);
 
 void rules();
+
+void teamInfo();
