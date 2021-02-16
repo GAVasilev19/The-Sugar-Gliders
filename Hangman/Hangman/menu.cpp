@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void title()
+void printTitle()
 {
     cout << "   ___    ___" << endl;
     cout << "  |   |  |   |" << endl;
@@ -20,9 +20,9 @@ void title()
     cout << "                                        \\_______/" << endl << endl;
 }
 
-void menu()
+void printMenu()
 {
-    title();
+    printTitle();
 
     cout << setw(60) << "+--------------------------+" << endl;
     cout << setw(60) << "|           MENU           |" << endl;
@@ -81,16 +81,17 @@ void choice(int number)
     {
         case 1:
         {
+            gameMode();
             break;
         }
         case 2:
         {
-            rules();
+            printRules();
             break;
         }
         case 3:
         {
-            teamInfo();
+            printTeamInfo();
             break;
         }
         case 4:
@@ -101,7 +102,7 @@ void choice(int number)
     }
 }
 
-void rules()
+void printRules()
 {
     cout << "                  _________                  __" << endl;
     cout << "                 |    __   \\                |  |" << endl;
@@ -118,7 +119,7 @@ void rules()
     returnToMenu();
 }
 
-void teamInfo()
+void printTeamInfo()
 {
     cout << "                    _____________" << endl;
     cout << "                   |             |" << endl;
@@ -147,7 +148,7 @@ void returnToMenu()
         if (answer == 'Y' || answer == 'y') // Go back to the menu
         {
             system("CLS");  // Clear the console
-            menu();         // Print out game menu
+            printMenu();         // Print out game menu
         }
 
         else if (answer == 'N' || answer == 'n')    // Exit the programme

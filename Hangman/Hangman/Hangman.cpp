@@ -9,5 +9,5 @@ int main()
 	system("color 5F");
 
 	// Print out menu
-	menu();
+	printMenu();
 }

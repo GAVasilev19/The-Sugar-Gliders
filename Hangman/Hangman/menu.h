@@ -2,16 +2,16 @@
 
 using namespace std;
 
-void title();
+void printTitle();
 
-void menu();
+void printMenu();
 
 int inputNumber();
 
 void choice(int number);
 
-void rules();
+void printRules();
 
-void teamInfo();
+void printTeamInfo();
 
 void returnToMenu();
