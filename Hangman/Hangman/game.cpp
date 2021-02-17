@@ -21,8 +21,10 @@ void gameMode()
     }
 
     string word = getWord(gameMode);
+    string hidden_word = hiddenWord(word);
 
-    cout << word;
+    cout << word << endl;
+    cout << hidden_word;
 }
 
 int chooseGameMode()
@@ -75,11 +77,30 @@ string getWord(int number)
     {
         srand(time(NULL));
 
-        string wordList[40] = { "computer", "programming", "algorithm", "education", "world", "algorithm", "array", "string", "integer", "flower", "confidence", "coffee", "shadow", "intelligent", "language", "number", "geography", "history", "literature", "birthday", "activity", "method", "education", "strategy", "baseball", "technology", "dolphin", "stranger", "president", "investment", "relationship", "disaster", "entertainment", "development", "discussion", "classroom", "magazine", "teacher", "product", "assistant" };			// Array with random words
+        string wordList[40] = { "computer", "programming", "algorithm", "education", "world", "algorithm", "array", "string", "integer", "flower", "confidence", "coffee", "shadow", "intelligent", "language", "number", "geography", "history", "literature", "birthday", "activity", "method", "education", "strategy", "baseball", "technology", "dolphin", "stranger", "president", "investment", "relationship", "disaster", "entertainment", "development", "discussion", "classroom", "magazine", "teacher", "product", "jazz" };			// Array with random words
 
         int randomNum = rand() % 40;	// Selects a random index from 0 to 40
         word = wordList[randomNum];		// The word at the random index gets saved into the variable
     }
 
     return word;
+}
+
+string hiddenWord(string word)
+{
+    string hiddenWord = word;
+
+    for (size_t i = 0; i < word.size(); i++)
+    {
+        if (hiddenWord[i] == ' ')
+        {
+            hiddenWord[i] = ' ';
+        }
+        else
+        {
+            hiddenWord[i] = '_';
+        }
+    }
+
+    return hiddenWord;
 }

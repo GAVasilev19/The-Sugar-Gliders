@@ -9,3 +9,5 @@ void gameMode();
 int chooseGameMode();
 
 string getWord(int number);
+
+string hiddenWord(string word);
