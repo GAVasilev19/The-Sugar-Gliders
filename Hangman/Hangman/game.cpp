@@ -21,6 +21,8 @@ void gameMode()
     }
 
     string word = getWord(gameMode);
+
+    cout << word;
 }
 
 int chooseGameMode()
@@ -71,19 +73,12 @@ string getWord(int number)
 
     if (number == 2)
     {
-        string wordList[40];			// Array for the random words
-        ifstream randomWord;			// This is used for reading input from a file
-        randomWord.open("Words.txt");	// Reads the file (the word list)
+        srand(time(NULL));
 
-        for (int i = 0; i < 40; i++)
-        {
-            randomWord >> wordList[i];	// Add the words from the list into the array
-        }
+        string wordList[40] = { "computer", "programming", "algorithm", "education", "world", "algorithm", "array", "string", "integer", "flower", "confidence", "coffee", "shadow", "intelligent", "language", "number", "geography", "history", "literature", "birthday", "activity", "method", "education", "strategy", "baseball", "technology", "dolphin", "stranger", "president", "investment", "relationship", "disaster", "entertainment", "development", "discussion", "classroom", "magazine", "teacher", "product", "assistant" };			// Array with random words
 
         int randomNum = rand() % 40;	// Selects a random index from 0 to 40
         word = wordList[randomNum];		// The word at the random index gets saved into the variable
-
-        randomWord.close();				// Stop reading the file so we don't waste memory
     }
 
     return word;
