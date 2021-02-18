@@ -11,3 +11,5 @@ int chooseGameMode();
 string getWord(int number);
 
 string hiddenWord(string word);
+
+void game(string word, string hiddenWord);

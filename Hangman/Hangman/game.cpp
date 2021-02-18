@@ -13,26 +13,24 @@ void gameMode()
 	cout << setw(60) << "1) Enter word | 2) Use generated word" << endl;
 	cout << setw(50) << "Enter your choice: ";
 
-	int gameMode = chooseGameMode();
+	int game_mode = chooseGameMode();
 
-    if (gameMode == 1)
+    if (game_mode == 1)
     {
         cout << endl << "Please enter your word: ";
     }
 
-    string word = getWord(gameMode);
+    string word = getWord(game_mode);
     string hidden_word = hiddenWord(word);
-
-    cout << word << endl;
-    cout << hidden_word;
+    game(word, hidden_word);
 }
 
 int chooseGameMode()
 {
     int number;
-    bool checkNum = false;
+    bool check_num = false;
 
-    while (checkNum == false)
+    while (check_num == false)
     {
         if (cin >> number)
         {
@@ -40,12 +38,12 @@ int chooseGameMode()
             {
                 cout << endl << "You entered an invalid statement. Please try again." << endl;
                 cout << "Your choice: ";
-                checkNum = false;
+                check_num = false;
             }
 
             else    // Valid input
             {
-                checkNum = true;
+                check_num = true;
             }
         }
 
@@ -55,7 +53,7 @@ int chooseGameMode()
             cout << "Your choice: ";
             cin.clear();
             cin.ignore(1000, '\n');
-            checkNum = false;
+            check_num = false;
         }
     }
 
@@ -103,4 +101,59 @@ string hiddenWord(string word)
     }
 
     return hiddenWord;
+}
+
+void game(string word, string hidden_word) // Izwurshwa glawnite operacii na igrata kato wuwejdane na predpolojenie i prowerka dali to se sudurja w dumata
+{
+    char choice;
+    int wrongGuess = 0;
+    string used_letters = "";
+
+
+    while (wrongGuess < 8 || hidden_word.find('_') == string::npos)
+    {
+        system("CLS");
+
+        //board();
+
+        cout << "Enter your guess: ";
+        cin >> choice;
+        cin.ignore(1000, '\n');
+
+        if (word.find(choice) != string::npos && used_letters.find(choice) == string::npos)
+        {
+            for (size_t i = 0; i < word.size(); i++)
+            {
+                if (word[i] == choice)
+                {
+                    hidden_word[i] = choice;
+                }
+            }
+        }
+
+        else
+        {
+            wrongGuess++;
+        }
+
+        if (used_letters.find(choice) == string::npos)
+        {
+            used_letters += choice;
+            used_letters += " ";
+        }
+
+        if (hidden_word.find('_') == string::npos)
+        {
+            system("CLS");
+            //board();
+            //win();
+        }
+
+        if (wrongGuess == 7)
+        {
+            system("CLS");
+            //board(wrongGuess, hidden_word, used_letters);
+            //loss();
+        }
+    }
 }
