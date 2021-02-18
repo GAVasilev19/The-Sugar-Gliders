@@ -41,9 +41,9 @@ void printMenu()
 int inputNumber()
 {
     int number;
-    bool checkNum = false;
+    bool check_num = false;
 
-    while (checkNum == false)
+    while (check_num == false)
     {
         if (cin >> number)
         {
@@ -51,12 +51,12 @@ int inputNumber()
             {
                 cout << endl << "You entered an invalid statement. Please try again." << endl;
                 cout << "Your choice: ";
-                checkNum = false;
+                check_num = false;
             }
 
             else    // Valid input
             {
-                checkNum = true;
+                check_num = true;
             }
         }
 
@@ -66,7 +66,7 @@ int inputNumber()
             cout << "Your choice: ";
             cin.clear();
             cin.ignore(1000, '\n');
-            checkNum = false;
+            check_num = false;
         }
     }
 

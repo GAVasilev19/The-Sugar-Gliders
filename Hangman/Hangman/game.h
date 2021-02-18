@@ -12,9 +12,9 @@ string getWord(int number);
 
 string hiddenWord(string word);
 
-void game(string word, string hiddenWord);
+void game(string word, string hidden_word);
 
-void board(int wrongGuess, string hidden_wordm, string used_letters);
+void board(int wrong_guess, string hidden_wordm, string used_letters);
 
 void win();
 

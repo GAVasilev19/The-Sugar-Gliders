@@ -1,7 +1,6 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <fstream>
 #include "menu.h"
 #include "game.h"
 
@@ -75,10 +74,10 @@ string getWord(int number)
     {
         srand(time(NULL));
 
-        string wordList[40] = { "computer", "programming", "algorithm", "education", "world", "algorithm", "array", "string", "integer", "flower", "confidence", "coffee", "shadow", "intelligent", "language", "number", "geography", "history", "literature", "birthday", "activity", "method", "education", "strategy", "baseball", "technology", "dolphin", "stranger", "president", "investment", "relationship", "disaster", "entertainment", "development", "discussion", "classroom", "magazine", "teacher", "product", "jazz" };			// Array with random words
+        string word_list[40] = { "computer", "programming", "algorithm", "education", "world", "algorithm", "array", "string", "integer", "flower", "confidence", "coffee", "shadow", "intelligent", "language", "number", "geography", "history", "literature", "birthday", "activity", "method", "education", "strategy", "baseball", "technology", "dolphin", "stranger", "president", "investment", "relationship", "disaster", "entertainment", "development", "discussion", "classroom", "magazine", "teacher", "product", "jazz" };			// Array with random words
 
-        int randomNum = rand() % 40;	// Selects a random index from 0 to 40
-        word = wordList[randomNum];		// The word at the random index gets saved into the variable
+        int random_num = rand() % 40;	// Selects a random index from 0 to 40
+        word = word_list[random_num];		// The word at the random index gets saved into the variable
     }
 
     return word;
@@ -86,35 +85,35 @@ string getWord(int number)
 
 string hiddenWord(string word)
 {
-    string hiddenWord = word;
+    string hidden_word = word;
 
     for (size_t i = 0; i < word.size(); i++)
     {
-        if (hiddenWord[i] == ' ')
+        if (hidden_word[i] == ' ')
         {
-            hiddenWord[i] = ' ';
+            hidden_word[i] = ' ';
         }
         else
         {
-            hiddenWord[i] = '_';
+            hidden_word[i] = '_';
         }
     }
 
-    return hiddenWord;
+    return hidden_word;
 }
 
 void game(string word, string hidden_word) // Izwurshwa glawnite operacii na igrata kato wuwejdane na predpolojenie i prowerka dali to se sudurja w dumata
 {
 	char choice;
-	int wrongGuess = 0;
+	int wrong_guess = 0;
 	string used_letters = "";
 
 
-	while (wrongGuess < 8 || hidden_word.find('_') == string::npos)
+	while (wrong_guess < 8 || hidden_word.find('_') == string::npos)
 	{
 		system("CLS");
 
-		board(wrongGuess, hidden_word, used_letters);
+		board(wrong_guess, hidden_word, used_letters);
 
 		cout << "Enter your guess: ";
 		cin >> choice;
@@ -133,7 +132,7 @@ void game(string word, string hidden_word) // Izwurshwa glawnite operacii na igr
 
 		else
 		{
-			wrongGuess++;
+			wrong_guess++;
 		}
 
 		if (used_letters.find(choice) == string::npos)
@@ -146,22 +145,22 @@ void game(string word, string hidden_word) // Izwurshwa glawnite operacii na igr
 		if (hidden_word.find('_') == string::npos)
 		{
 			system("CLS");
-			board(wrongGuess, hidden_word, used_letters);
+			board(wrong_guess, hidden_word, used_letters);
 			win();
 		}
 
-		if (wrongGuess == 7)
+		if (wrong_guess == 7)
 		{
 			system("CLS");
-			board(wrongGuess, hidden_word, used_letters);
+			board(wrong_guess, hidden_word, used_letters);
 			loss(word);
 		}
 	}
 }
 
-void board(int wrongGuess, string hidden_word, string used_letters)
+void board(int wrong_guess, string hidden_word, string used_letters)
 {
-	switch (wrongGuess)
+	switch (wrong_guess)
 	{
 		case 0:
 		{
