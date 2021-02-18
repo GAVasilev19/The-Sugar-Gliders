@@ -15,3 +15,7 @@ string hiddenWord(string word);
 void game(string word, string hiddenWord);
 
 void board(int wrongGuess, string hidden_wordm, string used_letters);
+
+void win();
+
+void loss(string word);

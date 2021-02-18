@@ -147,14 +147,14 @@ void game(string word, string hidden_word) // Izwurshwa glawnite operacii na igr
 		{
 			system("CLS");
 			board(wrongGuess, hidden_word, used_letters);
-			//win();
+			win();
 		}
 
 		if (wrongGuess == 7)
 		{
 			system("CLS");
 			board(wrongGuess, hidden_word, used_letters);
-			//loss(word);
+			loss(word);
 		}
 	}
 }
@@ -163,205 +163,222 @@ void board(int wrongGuess, string hidden_word, string used_letters)
 {
 	switch (wrongGuess)
 	{
-	case 0:
-	{
-		cout << "                    _________________________________________________" << endl;
-		cout << "                    |                    HANGMAN                    |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                     WORD                      |" << endl;
-		cout << setw(35);
-		for (size_t i = 0; i < hidden_word.size(); i++)
+		case 0:
 		{
-			cout << hidden_word[i] << " ";
+			cout << "                    _________________________________________________" << endl;
+			cout << "                    |                    HANGMAN                    |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                     WORD                      |" << endl;
+			cout << setw(35);
+			for (size_t i = 0; i < hidden_word.size(); i++)
+			{
+				cout << hidden_word[i] << " ";
+			}
+			cout << endl << "                    |_______________________________________________|" << endl;
+			break;
 		}
-		cout << endl << "                    |_______________________________________________|" << endl;
-		break;
-	}
 
-	case 1:
-	{
-		cout << "                    _________________________________________________" << endl;
-		cout << "                    |                    HANGMAN                    |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |               / \\                             |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                     WORD                      |" << endl;
-		cout << setw(35);
-		for (size_t i = 0; i < hidden_word.size(); i++)
+		case 1:
 		{
-			cout << hidden_word[i] << " ";
+			cout << "                    _________________________________________________" << endl;
+			cout << "                    |                    HANGMAN                    |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |               / \\                             |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                     WORD                      |" << endl;
+			cout << setw(35);
+			for (size_t i = 0; i < hidden_word.size(); i++)
+			{
+				cout << hidden_word[i] << " ";
+			}
+			cout << endl << "                    |_______________________________________________|" << endl;
+
+			break;
 		}
-		cout << endl << "                    |_______________________________________________|" << endl;
 
-		break;
-	}
-
-	case 2:
-	{
-		cout << "                    _________________________________________________" << endl;
-		cout << "                    |                    HANGMAN                    |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                 _____________                 |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |               / \\                             |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                     WORD                      |" << endl;
-		cout << setw(35);
-		for (size_t i = 0; i < hidden_word.size(); i++)
+		case 2:
 		{
-			cout << hidden_word[i] << " ";
+			cout << "                    _________________________________________________" << endl;
+			cout << "                    |                    HANGMAN                    |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                 _____________                 |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |               / \\                             |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                     WORD                      |" << endl;
+			cout << setw(35);
+			for (size_t i = 0; i < hidden_word.size(); i++)
+			{
+				cout << hidden_word[i] << " ";
+			}
+			cout << endl << "                    |_______________________________________________|" << endl;
+
+			break;
 		}
-		cout << endl << "                    |_______________________________________________|" << endl;
 
-		break;
-	}
-
-	case 3:
-	{
-		cout << "                    _________________________________________________" << endl;
-		cout << "                    |                    HANGMAN                    |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                 _____________                 |" << endl;
-		cout << "                    |                |      |                       |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |               / \\                             |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                     WORD                      |" << endl;
-		cout << setw(35);
-		for (size_t i = 0; i < hidden_word.size(); i++)
+		case 3:
 		{
-			cout << hidden_word[i] << " ";
+			cout << "                    _________________________________________________" << endl;
+			cout << "                    |                    HANGMAN                    |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                 _____________                 |" << endl;
+			cout << "                    |                |      |                       |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |               / \\                             |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                     WORD                      |" << endl;
+			cout << setw(35);
+			for (size_t i = 0; i < hidden_word.size(); i++)
+			{
+				cout << hidden_word[i] << " ";
+			}
+			cout << endl << "                    |_______________________________________________|" << endl;
+
+			break;
 		}
-		cout << endl << "                    |_______________________________________________|" << endl;
 
-		break;
-	}
-
-	case 4:
-	{
-		cout << "                    _________________________________________________" << endl;
-		cout << "                    |                    HANGMAN                    |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                 _____________                 |" << endl;
-		cout << "                    |                |      |                       |" << endl;
-		cout << "                    |                |      o                       |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |               / \\                             |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                     WORD                      |" << endl;
-		cout << setw(35);
-		for (size_t i = 0; i < hidden_word.size(); i++)
+		case 4:
 		{
-			cout << hidden_word[i] << " ";
+			cout << "                    _________________________________________________" << endl;
+			cout << "                    |                    HANGMAN                    |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                 _____________                 |" << endl;
+			cout << "                    |                |      |                       |" << endl;
+			cout << "                    |                |      o                       |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |               / \\                             |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                     WORD                      |" << endl;
+			cout << setw(35);
+			for (size_t i = 0; i < hidden_word.size(); i++)
+			{
+				cout << hidden_word[i] << " ";
+			}
+			cout << endl << "                    |_______________________________________________|" << endl;
+
+			break;
 		}
-		cout << endl << "                    |_______________________________________________|" << endl;
 
-		break;
-	}
-
-	case 5:
-	{
-		cout << "                    _________________________________________________" << endl;
-		cout << "                    |                    HANGMAN                    |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                 _____________                 |" << endl;
-		cout << "                    |                |      |                       |" << endl;
-		cout << "                    |                |      o                       |" << endl;
-		cout << "                    |                |      |                       |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |               / \\                             |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                     WORD                      |" << endl;
-		cout << setw(35);
-		for (size_t i = 0; i < hidden_word.size(); i++)
+		case 5:
 		{
-			cout << hidden_word[i] << " ";
+			cout << "                    _________________________________________________" << endl;
+			cout << "                    |                    HANGMAN                    |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                 _____________                 |" << endl;
+			cout << "                    |                |      |                       |" << endl;
+			cout << "                    |                |      o                       |" << endl;
+			cout << "                    |                |      |                       |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |               / \\                             |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                     WORD                      |" << endl;
+			cout << setw(35);
+			for (size_t i = 0; i < hidden_word.size(); i++)
+			{
+				cout << hidden_word[i] << " ";
+			}
+			cout << endl << "                    |_______________________________________________|" << endl;
+
+			break;
 		}
-		cout << endl << "                    |_______________________________________________|" << endl;
 
-		break;
-	}
-
-	case 6:
-	{
-		cout << "                    _________________________________________________" << endl;
-		cout << "                    |                    HANGMAN                    |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                 _____________                 |" << endl;
-		cout << "                    |                |      |                       |" << endl;
-		cout << "                    |                |      o                       |" << endl;
-		cout << "                    |                |     /|\\                      |" << endl;
-		cout << "                    |                |                              |" << endl;
-		cout << "                    |               / \\                             |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                     WORD                      |" << endl;
-		cout << setw(35);
-		for (size_t i = 0; i < hidden_word.size(); i++)
+		case 6:
 		{
-			cout << hidden_word[i] << " ";
+			cout << "                    _________________________________________________" << endl;
+			cout << "                    |                    HANGMAN                    |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                 _____________                 |" << endl;
+			cout << "                    |                |      |                       |" << endl;
+			cout << "                    |                |      o                       |" << endl;
+			cout << "                    |                |     /|\\                      |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |               / \\                             |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                     WORD                      |" << endl;
+			cout << setw(35);
+			for (size_t i = 0; i < hidden_word.size(); i++)
+			{
+				cout << hidden_word[i] << " ";
+			}
+			cout << endl << "                    |_______________________________________________|" << endl;
+
+			break;
 		}
-		cout << endl << "                    |_______________________________________________|" << endl;
 
-		break;
-	}
+		case 7:
+			{
+				cout << "                    _________________________________________________" << endl;
+				cout << "                    |                    HANGMAN                    |" << endl;
+				cout << "                    |_______________________________________________|" << endl;
+				cout << "                    |                                               |" << endl;
+				cout << "                    |                 _____________                 |" << endl;
+				cout << "                    |                |      |                       |" << endl;
+				cout << "                    |                |      o                       |" << endl;
+				cout << "                    |                |     /|\\                      |" << endl;
+				cout << "                    |                |     / \\                      |" << endl;
+				cout << "                    |               / \\                             |" << endl;
+				cout << "                    |                                               |" << endl;
+				cout << "                    |_______________________________________________|" << endl;
+				cout << "                    |                     WORD                      |" << endl;
+				cout << setw(35);
+				for (size_t i = 0; i < hidden_word.size(); i++)
+				{
+					cout << hidden_word[i] << " ";
+				}
+				cout << endl << "                    |_______________________________________________|" << endl;
 
-	case 7:
-	{
-		cout << "                    _________________________________________________" << endl;
-		cout << "                    |                    HANGMAN                    |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |                 _____________                 |" << endl;
-		cout << "                    |                |      |                       |" << endl;
-		cout << "                    |                |      o                       |" << endl;
-		cout << "                    |                |     /|\\                      |" << endl;
-		cout << "                    |                |     / \\                      |" << endl;
-		cout << "                    |               / \\                             |" << endl;
-		cout << "                    |                                               |" << endl;
-		cout << "                    |_______________________________________________|" << endl;
-		cout << "                    |                     WORD                      |" << endl;
-		cout << setw(35);
-		for (size_t i = 0; i < hidden_word.size(); i++)
-		{
-			cout << hidden_word[i] << " ";
-		}
-		cout << endl << "                    |_______________________________________________|" << endl;
-
-		break;
-	}
+				break;
+			}
 	}
 
 	cout << endl << "Used letters: " << used_letters << endl;
+}
+
+void win()
+{
+	cout << endl << "Great job! You guessed the word!" << endl << endl;
+	cout << "Would you like to go back to the menu? - Y/N" << endl;
+	cout << "Your choice: ";
+	returnToMenu();
+}
+
+void loss(string word)
+{
+	cout << endl << "You loose! Better luck next time!" << endl;
+	cout << "The word was: " << word << endl << endl;
+	cout << "Would you like to go back to the menu? - Y/N" << endl;
+	cout << "Your choice: ";
+	returnToMenu();
 }
