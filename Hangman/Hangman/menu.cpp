@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void printTitle()
+void printTitle()   // Displays title
 {
     cout << "   ___    ___" << endl;
     cout << "  |   |  |   |" << endl;
@@ -20,7 +20,7 @@ void printTitle()
     cout << "                                        \\_______/" << endl << endl;
 }
 
-void printMenu()
+void printMenu()    // Displays menu
 {
     printTitle();
 
@@ -38,7 +38,7 @@ void printMenu()
     choice(inputNumber());
 }
 
-int inputNumber()
+int inputNumber()   // Takes user to the right page depending on their input
 {
     int number;
     bool check_num = false;
@@ -73,7 +73,7 @@ int inputNumber()
     return number;
 }
 
-void choice(int number)
+void choice(int number) // Checks their input
 {
     system("CLS");  // Clear console
 
@@ -102,7 +102,7 @@ void choice(int number)
     }
 }
 
-void printRules()
+void printRules()   // Displays title
 {
     cout << "                  _________                  __" << endl;
     cout << "                 |    __   \\                |  |" << endl;
@@ -119,7 +119,7 @@ void printRules()
     returnToMenu();
 }
 
-void printTeamInfo()
+void printTeamInfo()    // Displays title
 {
     cout << "                    _____________" << endl;
     cout << "                   |             |" << endl;
@@ -136,7 +136,7 @@ void printTeamInfo()
     returnToMenu();
 }
 
-void returnToMenu()
+void returnToMenu() // After the game has finished
 {
     char answer;
     bool flag = false;

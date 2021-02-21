@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 void gameMode()
 {
 	cout << setw(50) << "Chose your Game Mode" << endl;
@@ -14,7 +15,7 @@ void gameMode()
 
 	int game_mode = chooseGameMode();
 
-    if (game_mode == 1)
+    if (game_mode == 1)	// If you choose to write your own word
     {
         cout << endl << "Please enter your word: ";
     }
@@ -63,7 +64,7 @@ string getWord(int number)
 {
     string word;
 
-    if (number == 1)
+    if (number == 1)	// If user chooses to write their own word
     {
         cin.clear();
         cin.ignore(1000, '\n');
@@ -83,7 +84,7 @@ string getWord(int number)
     return word;
 }
 
-string hiddenWord(string word)
+string hiddenWord(string word)	// This fuction makes the word hidden
 {
     string hidden_word = word;
 
@@ -102,7 +103,7 @@ string hiddenWord(string word)
     return hidden_word;
 }
 
-void game(string word, string hidden_word) // Izwurshwa glawnite operacii na igrata kato wuwejdane na predpolojenie i prowerka dali to se sudurja w dumata
+void game(string word, string hidden_word)	// Checks if the letter that the user entered is in the word
 {
 	char choice;
 	int wrong_guess = 0;
@@ -158,9 +159,9 @@ void game(string word, string hidden_word) // Izwurshwa glawnite operacii na igr
 	}
 }
 
-void board(int wrong_guess, string hidden_word, string used_letters)
+void board(int wrong_guess, string hidden_word, string used_letters)	// Displays game board
 {
-	switch (wrong_guess)
+	switch (wrong_guess)	// Shows the hangman if the user enters a wrong letter
 	{
 		case 0:
 		{
@@ -365,7 +366,7 @@ void board(int wrong_guess, string hidden_word, string used_letters)
 	cout << endl << "Used letters: " << used_letters << endl;
 }
 
-void win()
+void win()	// Message when you win
 {
 	cout << endl << "Great job! You guessed the word!" << endl << endl;
 	cout << "Would you like to go back to the menu? - Y/N" << endl;
@@ -373,7 +374,7 @@ void win()
 	returnToMenu();
 }
 
-void loss(string word)
+void loss(string word)	// Message when you lose
 {
 	cout << endl << "You loose! Better luck next time!" << endl;
 	cout << "The word was: " << word << endl << endl;
