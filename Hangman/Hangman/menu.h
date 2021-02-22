@@ -6,7 +6,7 @@ void printTitle();
 
 void printMenu();
 
-int inputNumber();
+int inputChoice();
 
 void choice(int number);
 

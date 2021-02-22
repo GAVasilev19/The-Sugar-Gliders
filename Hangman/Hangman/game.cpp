@@ -25,7 +25,7 @@ void gameMode()
     game(word, hidden_word);
 }
 
-int chooseGameMode()
+int chooseGameMode()	// Allows the user to input their game mode of choice
 {
     int number;
     bool check_num = false;
@@ -77,7 +77,7 @@ string getWord(int number)
 
         string word_list[40] = { "computer", "programming", "algorithm", "education", "world", "algorithm", "array", "string", "integer", "flower", "confidence", "coffee", "shadow", "intelligent", "language", "number", "geography", "history", "literature", "birthday", "activity", "method", "education", "strategy", "baseball", "technology", "dolphin", "stranger", "president", "investment", "relationship", "disaster", "entertainment", "development", "discussion", "classroom", "magazine", "teacher", "product", "jazz" };			// Array with random words
 
-        int random_num = rand() % 40;	// Selects a random index from 0 to 40
+        int random_num = rand() % 40;		// Selects a random index from 0 to 40
         word = word_list[random_num];		// The word at the random index gets saved into the variable
     }
 
@@ -120,7 +120,7 @@ void game(string word, string hidden_word)	// Checks if the letter that the user
 		cin >> choice;
 		cin.ignore(1000, '\n');
 
-		if (word.find(choice) != string::npos && used_letters.find(choice) == string::npos)
+		if (word.find(choice) != string::npos && used_letters.find(choice) == string::npos)	// The user made a correct guess
 		{
 			for (size_t i = 0; i < word.size(); i++)
 			{
@@ -131,26 +131,26 @@ void game(string word, string hidden_word)	// Checks if the letter that the user
 			}
 		}
 
-		else
+		else	// The user made a wrong guess
 		{
 			wrong_guess++;
 		}
 
-		if (used_letters.find(choice) == string::npos)
+		if (used_letters.find(choice) == string::npos)	// Adds the letter to the used letters string
 		{
 
 			used_letters += choice;
 			used_letters += " ";
 		}
 
-		if (hidden_word.find('_') == string::npos)
+		if (hidden_word.find('_') == string::npos)	// The user guessed the word
 		{
 			system("CLS");
 			board(wrong_guess, hidden_word, used_letters);
 			win();
 		}
 
-		if (wrong_guess == 7)
+		if (wrong_guess == 7)	// The user doesn't have more tries
 		{
 			system("CLS");
 			board(wrong_guess, hidden_word, used_letters);
@@ -161,9 +161,9 @@ void game(string word, string hidden_word)	// Checks if the letter that the user
 
 void board(int wrong_guess, string hidden_word, string used_letters)	// Displays game board
 {
-	switch (wrong_guess)	// Shows the hangman if the user enters a wrong letter
+	switch (wrong_guess)	// Shows the hangman depending on the wrong guesses
 	{
-		case 0:
+		case 0:	// 0 wrong guesses
 		{
 			cout << "                    _________________________________________________" << endl;
 			cout << "                    |                    HANGMAN                    |" << endl;
@@ -187,7 +187,7 @@ void board(int wrong_guess, string hidden_word, string used_letters)	// Displays
 			break;
 		}
 
-		case 1:
+		case 1:	// 1 wrong guess
 		{
 			cout << "                    _________________________________________________" << endl;
 			cout << "                    |                    HANGMAN                    |" << endl;
@@ -212,7 +212,7 @@ void board(int wrong_guess, string hidden_word, string used_letters)	// Displays
 			break;
 		}
 
-		case 2:
+		case 2:	// 2 wrong guesses
 		{
 			cout << "                    _________________________________________________" << endl;
 			cout << "                    |                    HANGMAN                    |" << endl;
@@ -237,32 +237,7 @@ void board(int wrong_guess, string hidden_word, string used_letters)	// Displays
 			break;
 		}
 
-		case 3:
-		{
-			cout << "                    _________________________________________________" << endl;
-			cout << "                    |                    HANGMAN                    |" << endl;
-			cout << "                    |_______________________________________________|" << endl;
-			cout << "                    |                                               |" << endl;
-			cout << "                    |                 _____________                 |" << endl;
-			cout << "                    |                |      |                       |" << endl;
-			cout << "                    |                |                              |" << endl;
-			cout << "                    |                |                              |" << endl;
-			cout << "                    |                |                              |" << endl;
-			cout << "                    |               / \\                             |" << endl;
-			cout << "                    |                                               |" << endl;
-			cout << "                    |_______________________________________________|" << endl;
-			cout << "                    |                     WORD                      |" << endl;
-			cout << setw(35);
-			for (size_t i = 0; i < hidden_word.size(); i++)
-			{
-				cout << hidden_word[i] << " ";
-			}
-			cout << endl << "                    |_______________________________________________|" << endl;
-
-			break;
-		}
-
-		case 4:
+		case 3:	// 3 wrong guesses
 		{
 			cout << "                    _________________________________________________" << endl;
 			cout << "                    |                    HANGMAN                    |" << endl;
@@ -270,7 +245,7 @@ void board(int wrong_guess, string hidden_word, string used_letters)	// Displays
 			cout << "                    |                                               |" << endl;
 			cout << "                    |                 _____________                 |" << endl;
 			cout << "                    |                |      |                       |" << endl;
-			cout << "                    |                |      o                       |" << endl;
+			cout << "                    |                |                              |" << endl;
 			cout << "                    |                |                              |" << endl;
 			cout << "                    |                |                              |" << endl;
 			cout << "                    |               / \\                             |" << endl;
@@ -287,7 +262,7 @@ void board(int wrong_guess, string hidden_word, string used_letters)	// Displays
 			break;
 		}
 
-		case 5:
+		case 4:	// 4 wrong guesses
 		{
 			cout << "                    _________________________________________________" << endl;
 			cout << "                    |                    HANGMAN                    |" << endl;
@@ -296,6 +271,31 @@ void board(int wrong_guess, string hidden_word, string used_letters)	// Displays
 			cout << "                    |                 _____________                 |" << endl;
 			cout << "                    |                |      |                       |" << endl;
 			cout << "                    |                |      o                       |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |                |                              |" << endl;
+			cout << "                    |               / \\                             |" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                     WORD                      |" << endl;
+			cout << setw(35);
+			for (size_t i = 0; i < hidden_word.size(); i++)
+			{
+				cout << hidden_word[i] << " ";
+			}
+			cout << endl << "                    |_______________________________________________|" << endl;
+
+			break;
+		}
+
+		case 5:	// 5 wrong guesses
+		{
+			cout << "                    _________________________________________________" << endl;
+			cout << "                    |                    HANGMAN                    |" << endl;
+			cout << "                    |_______________________________________________|" << endl;
+			cout << "                    |                                               |" << endl;
+			cout << "                    |                 _____________                 |" << endl;
+			cout << "                    |                |      |                       |" << endl;
+			cout << "                    |                |      o                       |" << endl;
 			cout << "                    |                |      |                       |" << endl;
 			cout << "                    |                |                              |" << endl;
 			cout << "                    |               / \\                             |" << endl;
@@ -312,7 +312,7 @@ void board(int wrong_guess, string hidden_word, string used_letters)	// Displays
 			break;
 		}
 
-		case 6:
+		case 6:	// 6 wrong guesses
 		{
 			cout << "                    _________________________________________________" << endl;
 			cout << "                    |                    HANGMAN                    |" << endl;
@@ -337,7 +337,7 @@ void board(int wrong_guess, string hidden_word, string used_letters)	// Displays
 			break;
 		}
 
-		case 7:
+		case 7:	// 7 wrong guesses
 			{
 				cout << "                    _________________________________________________" << endl;
 				cout << "                    |                    HANGMAN                    |" << endl;
@@ -376,7 +376,7 @@ void win()	// Message when you win
 
 void loss(string word)	// Message when you lose
 {
-	cout << endl << "You loose! Better luck next time!" << endl;
+	cout << endl << "You lose! Better luck next time!" << endl;
 	cout << "The word was: " << word << endl << endl;
 	cout << "Would you like to go back to the menu? - Y/N" << endl;
 	cout << "Your choice: ";

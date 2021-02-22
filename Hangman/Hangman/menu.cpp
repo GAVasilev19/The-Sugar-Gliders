@@ -22,7 +22,7 @@ void printTitle()   // Displays title
 
 void printMenu()    // Displays menu
 {
-    printTitle();
+    printTitle();   // Displays title
 
     cout << setw(60) << "+--------------------------+" << endl;
     cout << setw(60) << "|           MENU           |" << endl;
@@ -35,10 +35,10 @@ void printMenu()    // Displays menu
     cout << setw(60) << "+--------------------------+" << endl;
 
     cout << setw(58) << "Please enter your choice: ";
-    choice(inputNumber());
+    choice(inputChoice());
 }
 
-int inputNumber()   // Takes user to the right page depending on their input
+int inputChoice()   // Allows the user to input their operation of choice
 {
     int number;
     bool check_num = false;
@@ -73,7 +73,7 @@ int inputNumber()   // Takes user to the right page depending on their input
     return number;
 }
 
-void choice(int number) // Checks their input
+void choice(int number) // Takes user to the right page depending on their input
 {
     system("CLS");  // Clear console
 
@@ -81,28 +81,28 @@ void choice(int number) // Checks their input
     {
         case 1:
         {
-            gameMode();
+            gameMode();         // Takes user to game
             break;
         }
         case 2:
         {
-            printRules();
+            printRules();       // Takes user to the rules page
             break;
         }
         case 3:
         {
-            printTeamInfo();
+            printTeamInfo();    // Takes user to the team info page
             break;
         }
         case 4:
         {
-            exit(0);
+            exit(0);            // Exits the program
             break;
         }
     }
 }
 
-void printRules()   // Displays title
+void printRules()   // Displays rules
 {
     cout << "                  _________                  __" << endl;
     cout << "                 |    __   \\                |  |" << endl;
@@ -114,12 +114,19 @@ void printRules()   // Displays title
     cout << "                 |___|   \\___\\   \\______/   |__|   \\______/  \\_____/" << endl;
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl << endl;
 
-    cout << "Would you like to go back to the menu? - Y/N" << endl;
-    cout << "Your choice: ";
+    cout << "       The rules of Hangman are simple:" << endl << endl;
+    cout << "               1. Play individually or in groups." << endl;
+    cout << "               2. Make guesses choosing letters of the alphabet (and in special cases numbers or signs)." << endl;
+    cout << "               3. Make guesses untill you run out of turns or guess the word." << endl;
+    cout << "               4. Play our game again!" << endl;
+    cout << "               5. Have fun!" << endl << endl;
+
+    cout << " Would you like to go back to the menu? - Y/N" << endl;
+    cout << " Your choice: ";
     returnToMenu();
 }
 
-void printTeamInfo()    // Displays title
+void printTeamInfo()    // Displays team information
 {
     cout << "                    _____________" << endl;
     cout << "                   |             |" << endl;
@@ -131,12 +138,21 @@ void printTeamInfo()    // Displays title
     cout << "                        |___|   \\______/    \\ ____,_|  |__/__|__|__|" << endl;
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl << endl;
 
-    cout << "Would you like to go back to the menu? - Y/N" << endl;
-    cout << "Your choice: ";
+    cout << "       Hello! Our team is TheSugarGliders!" << endl;
+    cout << "       We are 9th graders from PGKPI." << endl << endl;
+    cout << "       Here are our names and roles in this project:" << endl << endl;
+    cout << "               Georgi Vasilev - 9A - Scrum Trainer" << endl;
+    cout << "               Georgi Ivanov - 9B - QA Engineer" << endl;
+    cout << "               Tereza Opanska - 9V - C++ Developer" << endl;
+    cout << "               Ivailo Radev - 9G - Code Checker" << endl << endl;
+    cout << "       Thank you for playing our game! We hope you like it!" << endl << endl;
+
+    cout << " Would you like to go back to the menu? - Y/N" << endl;
+    cout << " Your choice: ";
     returnToMenu();
 }
 
-void returnToMenu() // After the game has finished
+void returnToMenu() // Asks the user if he wants to go back to the menu
 {
     char answer;
     bool flag = false;
