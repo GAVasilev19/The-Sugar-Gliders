@@ -40,14 +40,14 @@ void printMenu()    // Displays menu
 
 int inputChoice()   // Allows the user to input their operation of choice
 {
-    int number;
+    int user_choice;
     bool check_num = false;
 
     while (check_num == false)
     {
-        if (cin >> number)
+        if (cin >> user_choice)
         {
-            if (number > 4 || number < 1) // Invalid input
+            if (user_choice > 4 || user_choice < 1) // Invalid input
             {
                 cout << endl << "You entered an invalid statement. Please try again." << endl;
                 cout << "Your choice: ";
@@ -70,14 +70,14 @@ int inputChoice()   // Allows the user to input their operation of choice
         }
     }
 
-    return number;
+    return user_choice;
 }
 
-void choice(int number) // Takes user to the right page depending on their input
+void choice(int user_choice) // Takes user to the right page depending on their input
 {
     system("CLS");  // Clear console
 
-    switch (number)
+    switch (user_choice)
     {
         case 1:
         {

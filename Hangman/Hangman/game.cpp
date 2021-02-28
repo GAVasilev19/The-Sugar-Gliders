@@ -7,9 +7,9 @@
 using namespace std;
 
 
-void gameMode()
+void gameMode()	// Asks you to choose the game mode
 {
-	cout << setw(50) << "Chose your Game Mode" << endl;
+	cout << setw(50) << "Choose your Game Mode" << endl;
 	cout << setw(60) << "1) Enter word | 2) Use generated word" << endl;
 	cout << setw(50) << "Enter your choice: ";
 
@@ -20,21 +20,21 @@ void gameMode()
         cout << endl << "Please enter your word: ";
     }
 
-    string word = getWord(game_mode);
-    string hidden_word = hiddenWord(word);
+    string word = getWord(game_mode);		// Receives the word that you're going to guess
+    string hidden_word = hiddenWord(word);	// Makes the word "hidden"
     game(word, hidden_word);
 }
 
 int chooseGameMode()	// Allows the user to input their game mode of choice
 {
-    int number;
+    int game_mode;
     bool check_num = false;
 
     while (check_num == false)
     {
-        if (cin >> number)
+        if (cin >> game_mode)
         {
-            if (number > 2 || number < 1) // Invalid input
+            if (game_mode > 2 || game_mode < 1) // Invalid input
             {
                 cout << endl << "You entered an invalid statement. Please try again." << endl;
                 cout << "Your choice: ";
@@ -57,21 +57,21 @@ int chooseGameMode()	// Allows the user to input their game mode of choice
         }
     }
 
-    return number;
+    return game_mode;
 }
 
-string getWord(int number)
+string getWord(int game_mode)
 {
     string word;
 
-    if (number == 1)	// If user chooses to write their own word
+    if (game_mode == 1)	// If user chooses to write their own word
     {
         cin.clear();
         cin.ignore(1000, '\n');
         getline(cin, word);
     }
 
-    if (number == 2)
+    if (game_mode == 2)	// The word that the user will have to guess will be randomly chosen from the 40 premade words
     {
         srand(time(NULL));
 
@@ -90,7 +90,7 @@ string hiddenWord(string word)	// This fuction makes the word hidden
 
     for (size_t i = 0; i < word.size(); i++)
     {
-        if (hidden_word[i] == ' ')
+        if (hidden_word[i] == ' ')	// if the phrase that the user will guess contains more that one word it separates them with a space
         {
             hidden_word[i] = ' ';
         }
@@ -143,7 +143,7 @@ void game(string word, string hidden_word)	// Checks if the letter that the user
 			used_letters += " ";
 		}
 
-		if (hidden_word.find('_') == string::npos)	// The user guessed the word
+		if (hidden_word.find('_') == string::npos)		// The user guessed the word
 		{
 			system("CLS");
 			board(wrong_guess, hidden_word, used_letters);

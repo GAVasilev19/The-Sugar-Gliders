@@ -8,7 +8,7 @@ void gameMode();
 
 int chooseGameMode();
 
-string getWord(int number);
+string getWord(int game_mode);
 
 string hiddenWord(string word);
 

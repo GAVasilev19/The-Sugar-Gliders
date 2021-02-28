@@ -8,7 +8,7 @@ void printMenu();
 
 int inputChoice();
 
-void choice(int number);
+void choice(int user_choice);
 
 void printRules();
 
